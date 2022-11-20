@@ -18,19 +18,18 @@
 void PositionNumber(int[,] matrix, int[] psition)
 {
     bool chek = false;
-    int indexFyrsr = 0;
+    
 
     for (int i = 0; i < matrix.GetLength(0); i++)
     {
         if (i == psition[0] - 1)
         {
-            indexFyrsr = i;
             for (int j = 0; j < matrix.GetLength(1); j++)
             {
                 if (j == psition[1] - 1)
                 {
                     chek = true;
-                    Console.Write($" Число {matrix[indexFyrsr, j]} ");
+                    Console.Write($" Число {matrix[i, j]} ");
                 }
             }
         }
