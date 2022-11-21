@@ -26,12 +26,14 @@ void FillMatrix(double[,] matrix)
 
 void PrintMatrix(double[,] matrix)
 {
+    const int cellWidth = 6;
     for (int i = 0; i < matrix.GetLength(0); i++)
     {
         for (int j = 0; j < matrix.GetLength(1); j++)
         {
-            Console.Write($"{matrix[i, j]:f1} ");
+            Console.Write($"|{matrix[i, j],cellWidth:f1}");
         }
+        Console.Write("|");
         Console.WriteLine();
     }
 }
@@ -42,5 +44,6 @@ Console.Write("Введите колличество колонок: ");
 int columns = int.Parse(Console.ReadLine());
 
 double[,] matrixFyrst = new double[rows, columns];
+
 FillMatrix(matrixFyrst);
 PrintMatrix(matrixFyrst);

@@ -30,11 +30,12 @@ void FillMatrix(double[,] matrix)
 
 void PrintMatrix(double[,] matrix)
 {
+    const int cellWidth = 7;
     for (int i = 0; i < matrix.GetLength(0); i++)
     {
         for (int j = 0; j < matrix.GetLength(1); j++)
         {
-            Console.Write($"  {matrix[i, j]}  ");
+            Console.Write($"{matrix[i, j],cellWidth}");
         }
         Console.WriteLine();
     }
@@ -45,7 +46,7 @@ void ArithmeticMeanColumns(double[,] matrix)
 {
     double arithmeticMean = 0;
     double l = Convert.ToDouble(matrix.GetLength(1));
-
+    const int cellWidth = 6;
     for (int j = 0; j < matrix.GetLength(1); j++)
     {
         for (int i = 0; i < matrix.GetLength(0); i++)
@@ -53,7 +54,7 @@ void ArithmeticMeanColumns(double[,] matrix)
             arithmeticMean = arithmeticMean + (matrix[i, j] / l);
 
         }
-        Console.Write($"|{arithmeticMean:f1} ");
+        Console.Write($"|{arithmeticMean,cellWidth:f1}");
         arithmeticMean = 0;
 
     }
